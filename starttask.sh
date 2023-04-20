@@ -30,8 +30,9 @@ mkdir $beeondmount
 chmod 777 $beeondmount
 
 ## Install
-wget -O /etc/yum.repos.d/beegfs-rhel7.repo https://www.beegfs.io/release/beegfs_7_1/dists/beegfs-rhel7.repo
-rpm --import https://www.beegfs.io/release/latest-stable/gpg/RPM-GPG-KEY-beegfs
+beegfs_version=7.2.4
+wget -O /etc/yum.repos.d/beegfs-rhel7.repo https://www.beegfs.io/release/beegfs_${beegfs_version}/dists/beegfs-rhel7.repo
+rpm --import https://www.beegfs.io/release/beegfs_${beegfs_version}/gpg/RPM-GPG-KEY-beegfs
 yum install -y epel-release
 yum install -y psmisc libbeegfs-ib beeond pdsh htop
 

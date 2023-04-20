@@ -19,7 +19,7 @@ PPN=$((NPROCS - 4)) # leaving 4 cores per node for BeeOND
 NP=$((NNODES * PPN))
 sed -i 's/$/ slots='"$NPROCS"'/g' hostfile
 
-module load mpi/openmpi-4.0.3
+module load mpi/openmpi #-4.0.3 not found, 4.1.1
 module load gcc-9.2.0
 
 echo "*** Throughput test random N-N ***"
